@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <listener>
+        <listener-class>Listeners.ContextListener</listener-class>
+    </listener>
+
+    <!-- Login and Authentication Servlets -->
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>Servlets.Api.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/api/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>Servlets.Api.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/api/register</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>Servlets.Api.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/api/logout</url-pattern>
+    </servlet-mapping>
+
+    <!-- Admin Servlets -->
+    <servlet>
+        <servlet-name>AdminMainMenu</servlet-name>
+        <servlet-class>Servlets.Applications.Admin.AdminMainMenuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminMainMenu</servlet-name>
+        <url-pattern>/api/admin/main-menu</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FileUpload</servlet-name>
+        <servlet-class>Servlets.Applications.Admin.FileUploadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileUpload</servlet-name>
+        <url-pattern>/api/admin/file-upload</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DisplayGameRooms</servlet-name>
+        <servlet-class>Servlets.Applications.Admin.DisplayGameRoomsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DisplayGameRooms</servlet-name>
+        <url-pattern>/api/admin/display-game-rooms</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>WatchGameAdmin</servlet-name>
+        <servlet-class>Servlets.Applications.Admin.WatchGameAdmin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WatchGameAdmin</servlet-name>
+        <url-pattern>/api/admin/watch-game</url-pattern>
+    </servlet-mapping>
+
+    <!-- Player Servlets -->
+    <servlet>
+        <servlet-name>ClientMainMenu</servlet-name>
+        <servlet-class>Servlets.Applications.Player.ClientMainMenuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClientMainMenu</servlet-name>
+        <url-pattern>/api/player/main-menu</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClientDisplayGameRooms</servlet-name>
+        <servlet-class>Servlets.Applications.Player.ClientDisplayGameRoomsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClientDisplayGameRooms</servlet-name>
+        <url-pattern>/api/player/display-game-rooms</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>JoinGame</servlet-name>
+        <servlet-class>Servlets.Applications.Player.JoinGameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JoinGame</servlet-name>
+        <url-pattern>/api/player/join-game</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>WaitingRoom</servlet-name>
+        <servlet-class>Servlets.Applications.Player.WaitingRoomServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WaitingRoom</servlet-name>
+        <url-pattern>/api/player/waiting-room</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Guesser</servlet-name>
+        <servlet-class>Servlets.Applications.Player.Game.GuesserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Guesser</servlet-name>
+        <url-pattern>/api/player/game/guesser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Definer</servlet-name>
+        <servlet-class>Servlets.Applications.Player.Game.DefinerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Definer</servlet-name>
+        <url-pattern>/api/player/game/definer</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>CheckAdmin</servlet-name>
+        <servlet-class>Servlets.Applications.Admin.CheckAdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckAdmin</servlet-name>
+        <url-pattern>/api/admin/check-admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GameState</servlet-name>
+        <servlet-class>Servlets.Applications.Player.Game.GameStateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GameState</servlet-name>
+        <url-pattern>/api/player/game-state</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAvailableTeams</servlet-name>
+        <servlet-class>Servlets.Applications.Player.GetAvailableTeamsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAvailableTeams</servlet-name>
+        <url-pattern>/api/player/get-available-teams</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateMaxCommand</servlet-name>
+        <servlet-class>Servlets.Applications.Admin.UpdateMaxCommandServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateMaxCommand</servlet-name>
+        <url-pattern>/api/admin/update-max-command</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
